@@ -1,0 +1,37 @@
+@mixin center($x:true,$y:false){
+    position: absolute;
+    @if($x){
+        left: 50%;
+        transform: translateX(-50%);
+    }@else if($y){
+        top: 50%;
+        transform: translateY(-50%);
+    }@else{
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+}
+
+@mixin breakpoint($point){
+    @if($point == 'desktop'){
+        @media (max-width:$desktop){
+            @content;
+        }
+    }
+    @else if($point == 'laptop'){
+        @media (max-width:$laptop){
+            @content;
+        }
+    }
+    @else if($point == 'tab'){
+        @media (max-width:$tab){
+            @content;
+        }
+    }
+    @else if($point == 'phone'){
+        @media (max-width:$phone){
+            @content;
+        }
+    }
+}

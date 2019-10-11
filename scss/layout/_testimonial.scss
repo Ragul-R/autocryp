@@ -1,0 +1,49 @@
+.testimonial{
+    padding: 125px 0 90px;
+    overflow: hidden;
+    background-image: linear-gradient(to right, $bg-light 0%, $bg-light 40%, $bg-dark 40%, $bg-dark 100%);
+}
+.testimonial-caption{
+    max-width: 380px;
+    text-transform: capitalize;
+    padding-top: 40px;
+    .dquote{
+        z-index: 1;
+    }
+    h2{
+        max-width: 310px;
+        margin: 0 45px 0 26px;
+        font-weight: 500;
+    }
+}
+
+@include breakpoint('desktop'){
+    .testimonial{
+        padding: 70px 0;
+    }
+    .testimonial-caption{
+        max-width: 300px;
+    }
+}
+
+@include breakpoint('tab'){
+    .testimonial{
+        background: $bg-dark;
+        h2{
+            color: $bg-light;
+        }
+    }
+}
+@media (max-width: 500px){
+    .slider{
+        left: -325px;
+    }
+}
+@include breakpoint('phone'){
+    .slider{
+        left: -310px;
+        li{
+            width: 300px;
+        }
+    }
+}

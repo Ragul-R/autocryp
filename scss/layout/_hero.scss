@@ -1,0 +1,65 @@
+.hero{
+    background-color: $bg-dark;
+    height: 838px;
+    color: #fff;
+    padding-top: 45px;
+    position: relative;
+}
+.hero-content{
+    float: left;
+    max-width: 540px;
+    margin-top: 150px;
+    h1{
+        max-width: 510px;
+        margin-bottom: 40px;
+    }
+    p{
+        height: 128px;
+        overflow: hidden;
+        margin-bottom: 35px;
+    }
+}
+.hero-banner{
+    height: inherit;
+    background: url('../images/hero.png') right top no-repeat;
+    background-size: 463px;
+}
+
+@include breakpoint('laptop'){
+    .hero-banner{
+        background:url('../images/hero.png') right bottom no-repeat;
+        background-size: 243px;
+    }
+}
+@include breakpoint('tab'){
+    .hero-banner{
+        background: none;
+    }
+    .hero-content{
+        margin-top: 70px;
+        h1{
+            font-size: 38px;
+            line-height: 52px;
+        }
+        p{
+            line-height: 26px;
+        }
+    }
+}
+@include breakpoint('phone'){
+    .hero{
+        height: 650px;
+    }
+    .hero-content{
+        margin-top: 40px;
+        h1{
+            font-size: 36px;
+            line-height: 48px;
+            margin-bottom: 30px;
+        }
+        p{
+            line-height: 22px;
+            margin-bottom: 30px;
+        }
+    }
+}

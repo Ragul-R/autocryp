@@ -1,0 +1,76 @@
+.collab{
+    background: $bg-light;
+    padding: 200px 0 100px;
+    h3{
+        text-align: center;
+        font-weight: 700;
+        font-size: 16px;
+        margin-bottom: 60px;
+    }
+    .collab-company{
+        font-size: 0;
+        text-align: center;
+        a{
+            display: inline-block;
+            width: calc(100% / 6 - 40px);
+            svg{
+                width: 100%;
+            }
+            &+a{
+                margin-left: 45px;
+            }
+
+            &:hover,&:focus{
+                .icon-amazon{
+                    fill: #000;
+                }
+                .icon-esty{
+                    fill: #ff6600;
+                }
+                .icon-clickbank{
+                    fill: #dd0000;
+                }
+                .icon-kickstarter{
+                    fill: #00d27b;
+                }
+                .icon-m-logo{
+                    fill:#8000ff;
+                }
+                .icon-youtube{
+                    fill: #ff0000;
+                }
+            }
+        }
+    }
+}
+
+@include breakpoint('laptop'){
+    .collab{
+        .collab-company{
+            a{
+                width: calc(100%/3 - 40px);
+                margin-bottom: 30px;
+                &:nth-child(3n + 1){
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+}
+@include breakpoint('tab'){
+    .collab{
+        padding: 150px 0 85px;
+        .collab-company{
+            a{
+                width: calc(100%/2 - 40px);
+                margin-bottom: 30px;
+                &:nth-child(3n+1){
+                    margin-left: 40px;
+                }
+                &:nth-child(2n+1){
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+}

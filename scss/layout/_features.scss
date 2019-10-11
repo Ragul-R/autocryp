@@ -1,0 +1,99 @@
+.features {
+    background: $bg-light;
+
+    container {
+        width: 1260px;
+    }
+}
+
+.features-list {
+    background: #fff;
+    padding: 66px 80px 56px;
+    border-radius: 10px;
+    box-shadow: 0 10px 34px 0 rgba(210, 210, 210, 0.5);
+    position: relative;
+    top: -80px;
+
+    li {
+        float: left;
+        width: calc(100%/3 - 67px);
+
+        &+li {
+            margin-left: 100px;
+        }
+
+        h3 {
+            margin: 26px 0 18px;
+            color: $dark-heading;
+            height: 45px;
+        }
+
+        p {
+            color: $text-color;
+            height: 184px;
+
+            &::before {
+                content: '';
+                display: block;
+                width: 60px;
+                height: 4px;
+                background: $primary-color;
+                margin-bottom: 20px;
+            }
+        }
+
+    }
+}
+
+@include breakpoint('desktop') {
+    .features-list {
+        li {
+            width: calc(100%/3 - 50px);
+
+            &+li {
+                margin-left: 75px;
+            }
+            p{
+                height: 300px;
+            }
+        }
+    }
+}
+
+@include breakpoint('laptop') {
+    .features-list {
+        padding: 60px;
+
+        li {
+            float: none;
+            width: 100%;
+            text-align: center;
+
+            &+li {
+                margin: 50px 0 0;
+            }
+            h3{
+                height: 65px;
+            }
+            p {
+                line-height: 26px;
+                height: 100%;
+                &::before {
+                    margin: 0 auto 20px;
+                }
+            }
+        }
+    }
+}
+
+@include breakpoint('tab'){
+    .features-list{
+        padding: 40px;
+    }
+}
+
+@include breakpoint('phone') {
+    .features-list {
+        padding: 40px;
+    }
+}

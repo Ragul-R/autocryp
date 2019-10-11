@@ -1,0 +1,93 @@
+button {
+    border: none;
+    background-color: unset;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    text-transform: capitalize;
+    &:focus{
+        outline: none;
+    }
+}
+
+.btn-default {
+    background-color: $primary-color;
+    padding: 5px 26px;
+    height: 40px;
+    width: 120px;
+    border-radius: 5px 0 5px;
+
+    &:hover,
+    &:focus {
+        box-shadow: 0 8px 34px 0 rgba(31, 219, 132, 0.6);
+    }
+
+    .hero-content &{
+        width: 200px;
+        padding: 18px 40px;
+        height: 60px;
+        font-size: 18px;
+        font-weight: 700;
+
+        @include breakpoint('tab'){
+            width: 175px;
+            height: 50px;
+            padding: 16px 30px;
+        }
+    }
+
+    .pricing-list &{
+        width:255px;
+        padding: 20px 46px;
+        height: 60px;
+        font-weight: 700;
+        text-transform: uppercase;
+
+        @include breakpoint('desktop'){
+            width: 180px;
+            height: 70px;
+            padding: 10px 35px;
+        }
+    }
+}
+
+.btn-secondary{
+    background: #f1fff8;
+    color: $primary-color;
+    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 2px;
+    padding: 20px 40px;
+    font-weight: 700;
+    &:focus{
+        box-shadow: 0 8px 34px 0 rgba(31, 219, 132, 0.6);
+    }
+    &.active{
+        background: #fff;
+    }
+
+    .btn-wrapper &{
+        &:first-child{
+            border-radius: 5px 0 0 5px;
+        }
+        &:last-child{
+            border-radius: 0 5px 5px 0;
+        }
+        &+.btn-secondary{
+            border-left: 1px solid $primary-color;
+        }
+
+        @include breakpoint('tab'){
+            &:first-child{
+                border-radius: 5px 5px 0 0;
+            }
+            &:last-child{
+                border-radius: 0 0 5px 5px;
+            }
+            &+.btn-secondary{
+                border-top: 1px solid $primary-color;
+                border-left: none;
+            }
+        }
+    }
+}

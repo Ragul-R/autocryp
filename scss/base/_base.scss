@@ -1,0 +1,42 @@
+a{
+    text-decoration: none;
+    color: unset;
+    font-size: 16px;
+    text-transform: capitalize;
+    &:focus{
+        outline: none;
+    }
+}
+
+h1{
+    color: #fff;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 58px;
+}
+h2{
+    font-size: 40px;
+    line-height: 64px;
+    color: $dark-heading;
+    @include breakpoint('laptop'){
+        font-size: 30px;
+        line-height: 46px;
+    }
+}
+h3{
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+main{
+    margin-top: 108px;
+}
+
+p{
+    line-height: 32px;
+    font-size: 16px;
+
+    @include breakpoint('laptop'){
+        line-height: 30px;
+    }
+}

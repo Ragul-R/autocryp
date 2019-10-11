@@ -1,0 +1,46 @@
+footer{
+    background: $bg-light;
+    text-align: center;
+    padding: 100px 0;
+    color: $text-color;
+    font-size: 16px;
+
+    p{
+        margin-bottom: 50px;
+    }
+    .footer-nav{
+        a{
+            display: inline-block;
+            &+a{
+                margin-left: 30px;
+                &::before{
+                    content:'/';
+                    display: inline-block;
+                    margin-right: 30px;
+                }
+            }
+        }
+    }
+}
+
+@include breakpoint('tab'){
+    footer{
+        padding: 85px 0;
+        .footer-nav{
+            font-size: 0;
+            width: 300px;
+            margin:auto;
+            a{
+                width: calc(100%/2);
+                line-height: 40px;
+                margin-bottom: 20px;
+                &+a{
+                    margin:0;
+                    &::before{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,117 @@
+.price{
+    padding: 45px 0 125px;
+    background-color: $bg-light;
+    text-align: center;
+    h2{
+        max-width: 810px;
+        margin: 0 auto 60px;
+    }
+}
+.btn-wrapper{
+    display: inline-block;
+    border: 1px solid $primary-color;
+    border-radius: 5px;
+    font-size: 0;
+}
+.pricing-list{
+    margin-top: 60px;
+    &>li{
+        width: calc(100% / 3);
+        float: left;
+        padding: 55px 0;
+        border-radius: 5px;
+    }
+    ul{
+        margin: 60px 0;
+        height: 200px;
+        li{
+            line-height: 32px;
+            font-size: 16px;
+            max-width: 200px;
+            margin: auto;
+            color: $text-color;
+
+            
+            &+li{
+                margin-top: 15px;
+            }
+        }
+    }
+    .special-price{
+        border-top: 3px solid #0a8aff;
+        background-color: #fff;
+        box-shadow: 0 7px 24px 0 rgba(83, 83, 83, 0.1);
+    }
+}
+
+.pricing-pack{
+    h4{
+        text-transform: capitalize;
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+    h5{
+        color: $primary-color;
+        font-size: 72px;
+        font-weight: normal;
+        margin-bottom: 10px;
+        &::before{
+            content:'\0024';
+        }
+    }
+    span{
+        color: $text-color;
+        font-size: 16px;
+        text-transform: capitalize;
+    }
+}
+
+@include breakpoint('laptop'){
+    .price{
+        h2{
+            max-width: 600px;
+        }
+    }
+    .btn-wrapper{
+        button{
+            padding: 20px;
+            font-size: 14px;
+        }
+    }
+    .pricing-list{
+        padding: 0 50px;
+        &>li{
+            float: none;
+            width: 100%;
+            background: #fff;
+            &+li{
+                margin-top: 50px;
+            }
+        }
+        h5{
+            font-size: 62px;
+        }
+        ul{
+            margin: 40px 0;
+            height: 150px;
+            li{
+                &+li{
+                    margin-top: 10px;
+                    line-height: 24px;
+                }
+            } 
+        }
+    }
+}
+
+@include breakpoint('tab'){
+    .btn-wrapper{
+        max-width: 200px;
+        button{
+            width: 100%;
+        }
+    }
+    .pricing-list{
+        padding: 0;
+    }
+}

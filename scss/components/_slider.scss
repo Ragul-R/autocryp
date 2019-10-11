@@ -1,0 +1,87 @@
+.slider{
+    margin-top: 80px;
+    font-size: 0;
+    position: relative;
+    transition: all ease .5s;
+    li{
+        width: 420px;
+        min-height: 480px;
+        padding: 80px 50px 100px;
+        display: inline-block;
+        vertical-align: top;
+        position: relative;
+        transition: all ease .5s;
+        border-radius: 6px;
+        background: rgba(#fff,.95);
+        height: inherit;
+        .dquote-sm{
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        &+li{
+            margin-left: 40px;
+        }
+        .quote{
+            line-height: 36px;
+            position: absolute;
+            bottom:40px;
+            span{
+                font-weight: 700;
+            }
+        }
+    }
+    .hide-slide{
+        opacity: 0;
+    }
+    .current-slide{
+        background: $primary-color;
+        color: #fff;
+        box-shadow: 12px 12px 40px 0 rgba(31, 219, 132, 0.5);
+    }
+}
+.slider-nav{
+    text-align: center;
+    button{
+        height: 20px;
+        width: 17px;
+        border: 3px solid #fff;
+        border-radius: 50%;
+        margin-top: 100px;
+        &+button{
+            margin-left: 15px;
+        }
+    }
+    .active,button:hover{
+        background: #fff;
+    }
+}
+
+@include breakpoint('laptop'){
+    .slider{
+        li{
+            padding: 40px 40px 120px; 
+            width: 320px;
+
+            .quote{
+                width: 240px;
+                line-height: 30px;
+                bottom: 40px;
+            }
+        }
+    }
+}
+@include breakpoint('tab'){
+    .slider{
+        left: -230px;
+    }
+}
+@media (max-width: 500px){
+    .slider{
+        left: -325px;
+    }
+}
+@include breakpoint('phone'){
+    .slider{
+        left: -340px;
+    }
+}

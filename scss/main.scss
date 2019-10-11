@@ -1,0 +1,21 @@
+@import 'abstracts/variables',
+        'abstracts/mixins',
+        'abstracts/utility';
+
+@import 'vendor/reset';
+
+@import 'base/fonts',
+        'base/icon',
+        'base/base';
+
+@import 'components/buttons',
+        'components/animate',
+        'components/slider';
+
+@import 'layout/header',
+        'layout/hero',
+        'layout/features',
+        'layout/price',
+        'layout/testimonial',
+        'layout/collab',
+        'layout/footer';

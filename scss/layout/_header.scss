@@ -1,0 +1,168 @@
+header{
+    padding: 25px 0;
+    color: #fff;
+    background: $bg-dark;
+    position: absolute;
+    width: 100%;
+    top:0;
+    z-index: 10;
+    transition: all ease-in-out 300ms;
+    nav{
+        padding: 10px 0;
+        a{
+            line-height: 40px;
+        }
+    }
+}
+.sticky-nav{
+    position: fixed;
+    padding: 20px 0;
+    animation: show-up .5s ease-in-out;
+
+    &.nav-open{
+        background: $bg-dark;
+        color: #fff;
+        .navbar-btn{
+            border-color: #fff;
+            .icon-bars{
+                &::after,&::before{
+                    background: #fff;
+                }
+            }
+        }
+    }
+}
+.brand-logo{
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 60px;
+    float: left;
+    &:focus{
+        outline: none;
+        color: $primary-color;
+    }
+}
+.navbar-btn{
+    height: 35px;
+    width: 35px;
+    border: 1px solid $bg-light;
+    border-radius: 3px;
+    position: absolute;
+    padding: 0;
+    display: none;
+    top: 30px;
+    left: 40px;
+    .icon-bars{
+        &::after,&::before{
+            transition: transform ease .5s;
+        }
+    }
+}
+.navbar{
+    .nav-main{
+        font-size: 0;
+        @include center(true,false);
+        a{
+            &+a{
+                margin-left: 38px;
+            }
+        }
+    }
+    .nav-secondary{
+        font-size: 0;
+        float: right;
+        a{
+            margin-right: 36px;
+        }
+    }
+}
+.nav-open{
+    background: $bg-light;
+    color: $bg-dark;
+    transition: all ease-in-out 300ms;
+    .navbar-btn{
+        border-color: $bg-dark;
+        .icon-bars{
+            &::after{
+                background: $bg-dark;
+                top: 15px;
+                transform: rotate(45deg);
+            }
+            &::before{
+                background: $bg-dark;
+                top: 15px;
+                transform: rotate(-45deg);
+            }
+        }
+    }
+    .navbar{
+        .nav-secondary{
+            a{
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+
+
+@include breakpoint('desktop'){
+    .navbar{
+        .nav-main{
+            a{
+                &+a{
+                    margin-left: 20px;
+                }
+            }
+        }
+        .nav-secondary{
+            a{
+                margin-right: 20px;
+            }
+        }
+    }
+}
+
+@include breakpoint('laptop'){
+    header{
+        text-align: center;
+        .brand-logo{
+            float: none;
+        }
+        .navbar-btn{
+            display: block;
+        }
+    }   
+    .navbar{
+        .nav-main{
+            position: relative;
+            transform: none;
+            left: unset;
+        }
+        .nav-wrapper{
+            height: 0;
+            overflow: hidden;
+            transition: height ease .5s;
+        }
+        .nav-main,.nav-secondary{
+            float: none;
+            padding:0;
+            a{
+                width: 100px;
+            }
+            a,button{
+                display: block;
+                margin:0 auto;
+                &+a{
+                    margin: 10px auto 0;
+                }
+            }
+        }
+    }
+}
+.nav-open{
+    .navbar{
+        .nav-wrapper{
+            height: 280px;
+        }
+    }
+}

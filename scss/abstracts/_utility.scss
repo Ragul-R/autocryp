@@ -1,0 +1,137 @@
+.container{
+    max-width: 1150px;
+    margin: auto;
+    @include breakpoint('desktop'){
+        max-width: calc(100% - 200px);
+    }
+    @include breakpoint('laptop'){
+        max-width: calc(100% - 200px);
+    }
+    @include breakpoint('tab'){
+        max-width: calc(100% - 150px);
+    }
+    @include breakpoint('phone'){
+        max-width: calc(100% - 50px);
+    }
+}
+.clear{
+    &::after{
+        display: block;
+        content: '';
+        clear: both;
+    }
+}
+.dquote,.dquote-sm{
+    position: relative;
+    z-index: 0;
+    &::after,&::before{
+        content:'';
+        border-style: solid;
+        height: 245px;
+        border-color: transparent transparent transparent rgba($primary-color,.1);
+        border-width: 0 0 165px 165px;
+        position: absolute;
+        top: 0;
+        z-index: -1;
+    }
+    &::after{
+        left: 213px;
+    }
+}
+.dquote{
+    @include breakpoint('desktop'){
+        &::after,&::before{
+            height: 200px;
+            border-width: 0 0 100px 100px;
+        }
+        &::after{
+            left: 150px;
+        }
+    }
+    @include breakpoint('laptop'){
+        &::after,&::before{
+            height: 100px;
+            border-width: 0 0 85px 85px;
+        }
+        &:after{
+            left: 100px;
+        }
+    }
+}
+.dquote-sm{
+    height: 40px;
+    width: 50px;
+    display: inline-block;
+    &::after,&::before{
+        height: 20px;
+        border-width: 0 0 18px 18px;
+        border-color: transparent transparent transparent $primary-color;
+        opacity: 1;
+    }
+    &::after{
+        left: 30px;
+    }
+    .current-slide &{
+        &::before,&::after{
+            border-color: transparent transparent transparent #fff;
+        }
+    }
+}
+.icon-bars{
+    position: relative;
+    display: inline-block;
+    height: inherit;
+    width: inherit;
+    &::after,&::before{
+        content:'';
+        display: block;
+        width: 20px;
+        height: 3px;
+        position: absolute;
+        background: $bg-light;
+        top:11px;
+        left: 7px;
+    }
+    &:after{
+        top: 19px;
+    }
+}
+
+.hover-animate{
+    position: relative;
+    padding: 0 5px;
+
+    &::after,&::before{
+        content:'';
+        position: absolute;
+        height: 3px;
+        width: 100%;
+        background: $primary-color;
+        bottom: -5px;
+        left: 0; 
+        transition: transform ease 0s;
+    }
+    &::before{
+        transform: scaleX(0);
+        transform-origin: left;
+        left:0;
+    }
+    &::after{
+        right:0;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition-duration: 300ms;
+    }
+    &:hover,&:focus{
+        outline: none;
+        color: $primary-color;
+        &::after,&::before{
+            transform: scaleX(1);
+            transition-duration: 300ms;
+        }
+        &::after{
+            transition-duration: 0s;
+            transition-delay: 300ms;
+        }
+    }
+}
